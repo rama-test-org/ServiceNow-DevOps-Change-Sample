@@ -86,7 +86,7 @@ jobs:
           ]'
 
     - name: Print run number on which artifact is generated
-    run: echo ${{ steps.registerArtifact.outputs.artifact_run_number }}
+      run: echo ${{ steps.registerArtifact.outputs.artifact_run_number }}
 
   # sonarScan:
   #   name: 'Sonar Scan'
