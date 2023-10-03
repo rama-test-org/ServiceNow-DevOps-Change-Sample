@@ -82,6 +82,9 @@ jobs:
                   "repositoryName": "${{ github.repository }}"
               }
           ]'
+    outputs:
+      RUN_NUMBER: ${{ steps.registerArtifact.outputs.run_number }}
+      
 
   # sonarScan:
   #   name: 'Sonar Scan'
