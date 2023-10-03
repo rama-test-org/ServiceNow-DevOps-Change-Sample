@@ -73,6 +73,9 @@ pipeline {
 			script{
 				echo "${releasePipelineName}"
 				build job: "${releasePipelineName}"
+				parameters: [
+					[$class: 'StringParameterValue',  name: 'FROM_CI', value: "${BUILD_NUMBER}" ]
+				]
 			}
 		}
 	}
