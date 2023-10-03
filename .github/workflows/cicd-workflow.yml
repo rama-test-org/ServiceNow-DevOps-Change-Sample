@@ -76,7 +76,7 @@ jobs:
           # List of Artifacts to be registered
           artifacts: '[
               {
-                  "name": "app-devops-cicd.jar",
+                  "name": "app-devops.jar",
                   "version": "1.${{ github.run_number }}",
                   "semanticVersion": "1.${{ github.run_number }}.0",
                   "repositoryName": "${{ github.repository }}"
@@ -149,14 +149,14 @@ jobs:
           # List of Artifacts in JSON format
           artifacts: '[
               {
-                  "name": "app-devops-cicd.jar",
+                  "name": "app-devops.jar",
                   "version": "1.${{ github.run_number }}",
                   "semanticVersion": "1.${{ github.run_number }}.0",
                   "repositoryName": "${{ github.repository }}"
               }
           ]'
           # Name of the Package that contains list of artifacts
-          package-name: 'app-devops-change-velocity-cicd.war'
+          package-name: 'app-devops-change-velocity.war'
           # Display Name of Job
           job-name: 'Register Package'
           
