@@ -8,7 +8,7 @@ pipeline {
 	agent any
 
 	parameters {
-		[ $class: 'StringParameterValue', name: 'BUILD_NUMBER_FROM_CI', defaultValue: '' ]
+		string(name: 'BUILD_NUMBER_FROM_CI', defaultValue: '')
 	}
 
 	stages {
