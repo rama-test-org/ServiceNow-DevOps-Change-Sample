@@ -76,7 +76,7 @@ jobs:
           # List of Artifacts to be registered
           artifacts: '[
               {
-                  "name": "app-devops-ci.jar",
+                  "name": "app-devops.jar",
                   "version": "1.${{ github.run_number }}",
                   "semanticVersion": "1.${{ github.run_number }}.0",
                   "repositoryName": "${{ github.repository }}"
