@@ -72,8 +72,9 @@ pipeline {
 		success{
 			script{
 				echo "${releasePipelineName}"
+				echo 'Build number -> "${BUILD_NUMBER}"'
 				
-				build(job: "${releasePipelineName}", parameters: [[ $class: 'StringParameterValue', name: 'BUILD_NUMBER_FROM_CI', value: '${BUILD_NUMBER}' ]])
+				build(job: "${releasePipelineName}", parameters: [[ $class: 'StringParameterValue', name: 'BUILD_NUMBER_FROM_CI', value: "${BUILD_NUMBER}" ]])
 				/*
 				build job: "${releasePipelineName}"
 				parameters: [
