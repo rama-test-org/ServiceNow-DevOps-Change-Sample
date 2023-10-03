@@ -58,6 +58,8 @@ jobs:
     name: 'Register Artifact'
     needs: test
     runs-on: ubuntu-latest
+    outputs:
+      RUN_NUMBER: ${{ steps.registerArtifact.outputs.artifact_run_number }}    
     steps:
     - name: ServiceNow DevOps Register Artifact
     # You may pin to the exact commit or the version.          
@@ -82,9 +84,9 @@ jobs:
                   "repositoryName": "${{ github.repository }}"
               }
           ]'
-    outputs:
-      RUN_NUMBER: ${{ steps.registerArtifact.outputs.run_number }}
-      
+
+    - name: Print run number on which artifact is generated
+    run: echo ${{ steps.registerArtifact.outputs.artifact_run_number }}
 
   # sonarScan:
   #   name: 'Sonar Scan'
