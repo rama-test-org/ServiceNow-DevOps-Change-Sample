@@ -11,12 +11,12 @@ jobs:
   registerPackage:
     name: 'Register Package'
     runs-on: ubuntu-latest
+    environment: ${{ needs.registerArtifact.outputs.RUN_NUMBER }}
     steps:
     - name: ServiceNow DevOps Register Package
     # You may pin to the exact commit or the version.           
       uses: ServiceNow/servicenow-devops-register-package@v2.0.0
       with:
-          run_number: ${{ needs.registerArtifact.outputs.RUN_NUMBER }}
           # Devops Integration Token
           devops-integration-token: ${{ secrets.SN_DEVOPS_TOKEN }}
           # ServiceNow Instance URL
@@ -29,8 +29,8 @@ jobs:
           artifacts: '[
               {
                   "name": "app-devops-ci.jar",
-                  "version": "1.${{ github.run_number }}",
-                  "semanticVersion": "1.${{ github.run_number }}.0",
+                  "version": "1.${{ environment.run_number }}",
+                  "semanticVersion": "1.${{ environment.run_number }}.0",
                   "repositoryName": "${{ github.repository }}"
               }
           ]'
