@@ -23,8 +23,8 @@ pipeline {
 					    [
 					        {
 					            "name": "${artifactname}",
-					            "version": "${version}",
-					            "semanticVersion": "${semanticVersion}",
+					            "version": "1.${params.BUILD_NUMBER_FROM_CI}",
+					            "semanticVersion": "1.${params.BUILD_NUMBER_FROM_CI}.0",
 					            "repositoryName": "${repoName}"
 					        }
 					    ],
