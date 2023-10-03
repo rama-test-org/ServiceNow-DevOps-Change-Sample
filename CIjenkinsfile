@@ -74,7 +74,7 @@ pipeline {
 				echo "${releasePipelineName}"
 				build job: "${releasePipelineName}"
 				parameters: [
-					[$class: 'StringParameterValue',  name: 'FROM_CI', value: "${BUILD_NUMBER}" ]
+					string(name: 'BUILD_NUMBER_FROM_CI', value: '${BUILD_NUMBER}') ]
 				]
 			}
 		}
